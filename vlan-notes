@@ -1,0 +1,38 @@
+What is a LAN?
+A LAN is a group of devices (pcs, servers, router, switches, etc.) in a sigle location (home, office, etc.)
+
+A more specific definition: A LAN is a single broadcast domain, including all devices in that broadcast domain.
+
+A broadcast domain is the group of devices which will receive a broadcast frame (destination MAC FFFF.FFFF.FFFF)
+sent by any one of the members.
+
+What is a VLAN?
+ VLAN tackles the questions of:
+  - Security: Even within the same office, you want to limit who has access to what.
+  - Performance: Lots of unnecessary broadcast traffic can reduce network performance.
+
+A switch WILL NOT forward traffic between VLANs, including broadcast/unkown unicast traffic.
+
+The switch does not perform inter-VLAN routing.
+It must send the traffic through the router.
+
+VLANs are configured on switches on a per-interface basis.
+They logically separate end hosts at layer 2.
+
+VLAN configuration
+show vlan brief -> Shows which vlans exist on the switch by default (1, 1002, 1003, 1004, 1005 - these vlans can not
+be deleted) and shows any other created VLANs.
+All interfaces are in vlan1 by default
+
+interface range g1/0 - 3
+switchport mode access -> An access port is a switchport which belongs to a single VLAN, and usually connects to end hosts like PCs.
+switchport access vlan 10 -> assigns vlan 10 to the interface.
+
+Access because it gives the pcs access to the network 
+switchport mode trunk -> Switchports which carry multiple VLANs are called 'trunk ports'.
+
+To change the name of a VLAN
+(config)#vlan 10 -> This command creates a VLAN manually as well.
+(config-vlan)#name ENGINEERING
+  
+
