@@ -11,7 +11,7 @@ What is a VLAN?
   - Security: Even within the same office, you want to limit who has access to what.
   - Performance: Lots of unnecessary broadcast traffic can reduce network performance.
 
-A switch WILL NOT forward traffic between VLANs, including broadcast/unkown unicast traffic.
+A switch WILL NOT forward traffic between VLANs, including broadcast/unknown unicast traffic.
 
 The switch does not perform inter-VLAN routing.
 It must send the traffic through the router.
